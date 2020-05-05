@@ -3,9 +3,9 @@ import java.util.Random;
 
 public class ElfNameGenerator{
 
-/*Creates random object and an array of three-lettered syllables
-*Assigns the syllables randomly to make the first and last name
-*Returns them both together connected by a space
+/* Creates random object and an array of three-lettered syllables
+* Assigns the syllables pseudo-randomly to make the first and last name
+* Returns them both concatenated together by a space
 */
 
   public static String names(int first, int second){
@@ -22,6 +22,12 @@ public class ElfNameGenerator{
     String name = name1 + " " + name2;
     return name;
   }
+
+/* Checks for incorrect input.
+* Given the needs of this program, it just needs to check if the string is between 1 and 9. (This can be changed easily by adding to the array.)
+* If it meets the requirements, it will parse the string and convert it to an integer.
+* Otherwise, it will ask for a different number, then repeat until you follow the rules.
+*/
 
   public static int checker(String syllable){
     Scanner scnr = new Scanner(System.in);
@@ -49,11 +55,12 @@ public class ElfNameGenerator{
     boolean another = true;
     int firstSyllableInt = -1;
     int secondSyllableInt = -2;
-    /*Finds how many syllables you want
-    *Runs the method names
-    *Asks if you like the name, makes sure you follow the rules
-    *If you do, the end. If you don't, it tries again
-    */
+
+/* Finds how many syllables you want
+* Runs the methods described above
+* Asks if you like the name, makes sure you follow the rules
+* If you do like it, the end. If you don't, it tries again
+*/
 
     while (another){
       System.out.println("How many syllables in the first name? (1-9)");
