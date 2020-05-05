@@ -52,6 +52,7 @@ public class ElfNameGenerator{
 
   public static void main(String [] args){
     Scanner scnr = new Scanner(System.in);
+    Random rnd = new Random();
     boolean another = true;
     int firstSyllableInt = -1;
     int secondSyllableInt = -2;
@@ -71,6 +72,9 @@ public class ElfNameGenerator{
       secondSyllableInt = checker(secondSyllable);
       String name = names(firstSyllableInt, secondSyllableInt);
       String cont = "";
+      int randomInt = rnd.nextInt(1000000);
+      if (randomInt == 1998)
+        name = "Leonardo";
       do{
         System.out.println("--------------------------------------\n" + name + "\n--------------------------------------\nIs that alright? (y/n)");
         cont = scnr.nextLine();
